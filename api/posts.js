@@ -1,5 +1,4 @@
 const route = require('express').Router();
-const mongoose = require('mongoose');
 const User = require('../db/Post');
 
 
@@ -53,12 +52,13 @@ route.post('', async (req, res) => {
 route.get('', async (req, res) => {
     const date = getDateTime();
     console.log(date);
-    const data = await User.find({date: {$gt: date}}, (err, data) => {
-        if(err)
-            res.json(err);
-        else
-            res.json(data);
-    });
+    try {
+        const data = await User.find({date: {$gt: date}})
+        res.json(data);
+    } catch(err) {
+        res.json(err)
+    }
+    
 });
 
 

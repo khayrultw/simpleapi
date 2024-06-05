@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
 
-//const DBURL = 'mongodb+srv://khayrul123:AAaa11..,,@cluster0-6kqzz.mongodb.net/test?retryWrites=true&w=majority';
-
-const DBURL = 'mongodb+srv://khayrul1234:khayrul1234@cluster0.q6u9x.mongodb.net/test?retryWrites=true&w=majority';
+const DBURL = 'mongodb+srv://nullptr:CxjyiYxPbVCT0vAd@fcapi.djdbojt.mongodb.net/?retryWrites=true&w=majority&appName=fcapi';
 
 const connectDB = async () => {
-    await mongoose.connect(DBURL, { useUnifiedTopology: true, useNewUrlParser: true });
+    await mongoose.connect(DBURL);
     console.log('connected...'); 
 };
 
